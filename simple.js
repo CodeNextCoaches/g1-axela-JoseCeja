@@ -46,7 +46,16 @@
    function processInput() {
      let currentInput = input.value;
      input.value = '';
-     alert(currentInput);
+
+     console.log(validInputs.indexOf(currentInput));
+
+     if (validInputs.indexOf(currentInput) == -1) {
+       message.innerHTML = "Sorry, I wasn't programmed to answer that";
+     }else {
+       message.innerHTML = responses[validInputs.indexOf(currentInput)];
+     }
+
    }
+
 
 })();

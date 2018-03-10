@@ -1,13 +1,13 @@
-(function () {
+(function() {
 
-  var input,
-      submit,
-      message,
-      advancedDiv,
-      errorText = "I don't understand you.",
-      dunnoText = "I wasn't programmed to know that.",
-      picture = null,
-      greetings = ["hi", "sup", "hello", "hola", "wasup"];
+  var input = document.querySelector("#axela-input"),
+    submit = document.querySelector("#axela-submit"),
+    message = document.querySelector("#axela-message"),
+    advancedDiv = document.querySelector("#advanced"),
+    errorText = "I don't understand you.",
+    dunnoText = "I wasn't programmed to know that.",
+    picture = null,
+    greetings = ["hi", "sup", "hello", "hola", "wasup", "herro"];
 
   // Add event listeners to text input and submit button below
   input.addEventListener("keypress", checkKey);
@@ -16,7 +16,7 @@
   // This function checks if the user has pressed "ENTER" on their keyboard.
   function checkKey(event) {
     var keyCode = event.which || event.keyCode;
-    if(keyCode == "13") {
+    if (keyCode == "13") {
       processInput();
     }
   }
@@ -47,6 +47,24 @@
       anything other than 1 or 2 words. This will simply set the innerHTML of
       the message element to errorText.
    */
+
+  function processInput() {
+    if (advancedDiv.contains(picture)) {
+      picture.removeChild();
+    }
+
+    var words = input.value.toLowerCase().trim().split(" ");
+    input.value = '';
+
+    if (words.length == 1) {
+      if (greetings.indexOf(words[0]) != -1) {
+        message.innerHTML = "Greetings!";
+      } else {
+        message.innerHTML = "errorText";
+      }
+    }
+
+  }
 
   /*
    * who(word)
