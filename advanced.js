@@ -62,6 +62,28 @@
       } else {
         message.innerHTML = "errorText";
       }
+    } else if (words.length == 2) {
+      switch (words[0]) {
+        case "who":
+          who(words[1]);
+          break;
+        case "what":
+          what(words[1]);
+          break;
+        case "where":
+          where(words[1]);
+          break;
+        case "tell":
+          tell(words[1]);
+          break;
+        case "show":
+          show(words[1])
+          break;
+        default:
+          message.innerHTML = errorText;
+      }
+    } else {
+      message.innerHTML = errorText;
     }
 
   }
@@ -81,25 +103,109 @@
      doesn't know what they're referring to.)
    */
 
-  /*
-   * what(word)
-   * See above.
-   */
+  function who(word) {
+    switch (word) {
+      case "you":
+        message.innerHTML = 'I am Axela, of course';
+        break;
 
-  /*
-   * where(word)
-   * See above.
-   */
+      case "me":
+        message.innerHTML = 'You are you';
+        break;
 
-  /*
-   * tell(word)
-   * See above.
-   */
+      case "dog":
+        message.innerHTML = 'scooby doo';
+        break;
 
-  /*
-   * show(word)
-   * See above.
-   */
+      default:
+        message.innerHTML = dunnoText;
+
+    }
+  }
+
+
+  function what(word) {
+    switch (word) {
+      case 'life':
+        message.innerHTML = 'a burden';
+        break;
+
+      case 'pi':
+        message.innerHTML = '3.14159265359';
+        break;
+
+      case 'love':
+        message.innerHTML = "baby don't hurt me, don't hurt me no more";
+        break;
+
+      default:
+        message.innerHTML = dunnoText;
+
+    }
+  }
+
+
+
+
+  function where(word) {
+    switch (word) {
+      case 'me':
+        message.innerHTML = 'earth';
+        break;
+
+      case 'atlantis':
+        message.innerHTML = 'earth';
+        break;
+
+      case 'food':
+        message.innerHTML = 'in my stomach';
+        break;
+
+      default:
+        message.innerHTML = dunnoText
+
+    }
+  }
+
+
+
+
+  function tell(word) {
+    switch (word) {
+      case 'joke':
+        message.innerHTML = '';
+        break;
+
+      case 'poem':
+        message.innerHTML = '';
+        break;
+
+      case 'quote':
+        message.innerHTML = '';
+        break;
+
+      default:
+        message.innerHTML = dunnoText;
+    }
+  }
+
+
+
+
+  function show(word) {
+    switch (word) {
+      case 'dog':
+        picture = document.createElement('img');
+        picture.src = 'img/dog.png';
+        advancedDiv.appendChild(picture);
+        break;
+
+      default:
+        message.innerHTML = dunnoText;
+    }
+  }
+
+
 
 
 })();
