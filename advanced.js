@@ -79,6 +79,9 @@
         case "show":
           show(words[1])
           break;
+        case "say":
+          say(words[1]);
+          break;
         default:
           message.innerHTML = errorText;
       }
@@ -106,7 +109,7 @@
   function who(word) {
     switch (word) {
       case "you":
-        message.innerHTML = 'I am Axela, of course';
+        message.innerHTML = 'I am Zordon, of course';
         break;
 
       case "me":
@@ -134,8 +137,8 @@
         message.innerHTML = '3.14159265359';
         break;
 
-      case 'love':
-        message.innerHTML = "baby don't hurt me, don't hurt me no more";
+      case 'cake':
+        message.innerHTML = "The cake is a lie";
         break;
 
       default:
@@ -202,6 +205,20 @@
 
       default:
         message.innerHTML = dunnoText;
+    }
+  }
+
+  function say(word){
+    switch (word) {
+      case 'speech':
+        var audio = new Audio('audio/Glados-speech.mp3')
+        audio.play();
+        break;
+      case 'weee':
+        var yay = new Audio('audio/')
+        break;
+      default:
+
     }
   }
 
